@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
   s.name         = "iOS-GPX-Framework"
-  s.version      = "0.0.4"
-  s.summary      = "The iOS framework for parsing/generating GPX files. (@merlos fork)"
+  s.version      = "0.0.6"
+  s.summary      = "The iOS framework for parsing/generating GPX files. (@iosphere fork)"
   s.description  = <<-DESC
                    This is a iOS framework for parsing/generating GPX files.
                    This Framework parses the GPX from a URL or Strings and create Objective-C Instances of GPX structure.
                    DESC
-  s.homepage     = "https://github.com/merlos/iOS-GPX-Framework."
+  s.homepage     = "https://github.com/iosphere/iOS-GPX-Framework."
   s.screenshots  = "http://gpxframework.com/img/gpx_viewer.png", "http://gpxframework.com/img/gpx_logger.png"
   s.license      = 'MIT'
-  s.author       = { "Watanabe Toshinori" => "t@flcl.jp", "Juan M. Merlos" => '' }
-  s.source       = { :git => "https://github.com/merlos/iOS-GPX-Framework.git", :tag => s.version.to_s  }
+  s.author       = { "NextBusinessSystem" => '', "iosphere" => '', "danieltskv" => ''}
+  s.source       = { :git => "https://github.com/danieltskv/iOS-GPX-Framework", :tag => s.version.to_s  }
 
   s.platform     = :ios
   s.ios.deployment_target = '6.0'
