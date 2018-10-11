@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readonly) NSString *creator;
 
 /** Metadata about the file. */
-@property (strong, nonatomic, nullable, readonly) GPXMetadata *metadata;
+@property (strong, nonatomic, nullable) GPXMetadata *metadata;
 
 /** Keywords for indexing the GPX file with search engines. Will be comma separated. */
 @property (strong, nonatomic, nullable, readonly) NSArray<NSString *> *keywords;
