@@ -235,7 +235,7 @@
 
 + (NSString *)valueForNonNegativeInteger:(NSInteger)integer
 {
-    if (integer > 0) {
+    if (integer >= 0) {
         return [NSString stringWithFormat:@"%ld", (long)integer];
     }
     return @"0";
