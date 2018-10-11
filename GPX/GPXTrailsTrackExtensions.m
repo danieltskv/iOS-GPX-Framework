@@ -18,7 +18,7 @@ NSString *const kTrackExtensionsTagName = @"trailsio:TrackExtension";
 
 @implementation GPXTrailsTrackExtensions
 
-- (id)initWithXMLElement:(GPXXMLElement *)element parent:(GPXElement *)parent {
+- (id)initWithXMLElement:(TBXMLElement *)element parent:(GPXElement *)parent {
     self = [super initWithXMLElement:element parent:parent];
     
     if (self) {
