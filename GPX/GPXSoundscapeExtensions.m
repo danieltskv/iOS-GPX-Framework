@@ -17,9 +17,9 @@ NSString *const kElementTrueHeading =               @"gpxgd:hdg_tru";
 NSString *const kElementMagneticHeading =           @"gpxgd:hdg_mag";
 NSString *const kElementHeadingAccuracy =           @"gpxgd:hdg_acc";
 
-NSString *const kElementActivity =                  @"gpxgd:activity";
-
 NSString *const kElementFloorLevel =                @"gpxgd:flr_lvl";
+
+NSString *const kElementMotionActivity =            @"gpxgd:activity";
 
 @interface GPXSoundscapeExtensions ()
 
@@ -46,10 +46,10 @@ NSString *const kElementFloorLevel =                @"gpxgd:flr_lvl";
         _trueHeadingString = [self textForSingleChildElementNamed:kElementTrueHeading xmlElement:element];
         _magneticHeadingString = [self textForSingleChildElementNamed:kElementMagneticHeading xmlElement:element];
         _headingAccuracyString = [self textForSingleChildElementNamed:kElementHeadingAccuracy xmlElement:element];
-
-        _activity = [self textForSingleChildElementNamed:kElementActivity xmlElement:element];
         
         _floorLevelString = [self textForSingleChildElementNamed:kElementFloorLevel xmlElement:element];
+        
+        _activity = [self textForSingleChildElementNamed:kElementMotionActivity xmlElement:element];
     }
     return self;
 }
@@ -124,9 +124,9 @@ NSString *const kElementFloorLevel =                @"gpxgd:flr_lvl";
     if (_magneticHeadingString) [self gpx:gpx addPropertyForValue:_magneticHeadingString tagName:kElementMagneticHeading indentationLevel:indentationLevel];
     if (_headingAccuracyString) [self gpx:gpx addPropertyForValue:_headingAccuracyString tagName:kElementHeadingAccuracy indentationLevel:indentationLevel];
     
-    if (_activity) [self gpx:gpx addPropertyForValue:_activity tagName:kElementActivity indentationLevel:indentationLevel];
-    
     if (_floorLevelString) [self gpx:gpx addPropertyForValue:_floorLevelString tagName:kElementFloorLevel indentationLevel:indentationLevel];
+    
+    if (_activity) [self gpx:gpx addPropertyForValue:_activity tagName:kElementMotionActivity indentationLevel:indentationLevel];
 }
 
 @end

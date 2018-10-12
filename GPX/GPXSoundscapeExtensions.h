@@ -17,9 +17,9 @@
 @property (strong, nonatomic) NSNumber *magneticHeading;
 @property (strong, nonatomic) NSNumber *headingAccuracy;
 
+@property (strong, nonatomic) NSNumber *floorLevel;
+
 /// examples: stationary, walking, running, automotive, cycling
 @property (strong, nonatomic) NSString *activity;
-
-@property (strong, nonatomic) NSNumber *floorLevel;
 
 @end

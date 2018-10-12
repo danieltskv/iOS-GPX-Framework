@@ -22,4 +22,9 @@
 @property (strong) GPXTrailsTrackPointExtensions *trailsTrackPointExtensions;
 @property (strong) GPXSoundscapeExtensions *soundscapeExtensions;
 
+/// Backwards compatibility
+/// Speed and course are now in the Garmin TrackPoint extension
+@property (nonatomic, assign) CLLocationSpeed speed;
+@property (nonatomic, assign) CLLocationDirection course;
+
 @end

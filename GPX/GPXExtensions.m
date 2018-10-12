@@ -12,7 +12,10 @@
 #import "GPXTrailsTrackPointExtensions.h"
 #import "GPXSoundscapeExtensions.h"
 
-@implementation GPXExtensions
+@implementation GPXExtensions {
+    NSString *_speedValue;
+    NSString *_courseValue;
+}
 
 #pragma mark - Instance
 
@@ -24,12 +27,40 @@
         _trailsTrackExtensions = (GPXTrailsTrackExtensions *)[self childElementOfClass:[GPXTrailsTrackExtensions class] xmlElement:element];
         _trailsTrackPointExtensions = (GPXTrailsTrackPointExtensions *)[self childElementOfClass:[GPXTrailsTrackPointExtensions class] xmlElement:element];
         _soundscapeExtensions = (GPXSoundscapeExtensions *)[self childElementOfClass:[GPXSoundscapeExtensions class] xmlElement:element];
+        
+        _speedValue = [self textForSingleChildElementNamed:@"speed" xmlElement:element];
+        _courseValue = [self textForSingleChildElementNamed:@"course" xmlElement:element];
     }
     return self;
 }
 
 #pragma mark - Public methods
 
+- (double)speed
+{
+    if (!_speedValue) {
+        return -1;
+    }
+    return [GPXType decimal:_speedValue];
+}
+
+- (void)setSpeed:(double)speed
+{
+    _speedValue = [GPXType valueForDecimal:speed];
+}
+
+- (double)course
+{
+    if (!_courseValue) {
+        return -1;
+    }
+    return [GPXType decimal:_courseValue];
+}
+
+- (void)setCourse:(double)course
+{
+    _courseValue = [GPXType valueForDecimal:course];
+}
 
 #pragma mark - tag
 
