@@ -10,8 +10,8 @@
 
 NSString *const kGPXSoundscapeExtensionsTagName =   @"gpxgd:TrackPointExtension";
 
-NSString *const kElementHorizontalAccuracy =        @"gpxgd:acc_h";
-NSString *const kElementVerticalAccuracy =          @"gpxgd:acc_v";
+NSString *const kElementHorizontalAccuracy =        @"gpxgd:hor_acc";
+NSString *const kElementVerticalAccuracy =          @"gpxgd:ver_acc";
 
 NSString *const kElementTrueHeading =               @"gpxgd:hdg_tru";
 NSString *const kElementMagneticHeading =           @"gpxgd:hdg_mag";
@@ -57,7 +57,7 @@ NSString *const kElementMotionActivity =            @"gpxgd:activity";
 #pragma mark - Public methods
 
 - (void)setHorizontalAccuracy:(NSNumber *)horizontalAccuracy {
-    _horizontalAccuracyString = horizontalAccuracy ? [NSString stringWithFormat:@"%f", horizontalAccuracy.doubleValue] : nil;
+    _horizontalAccuracyString = horizontalAccuracy ? [GPXType valueForDecimal:horizontalAccuracy.doubleValue] : nil;
 }
 
 - (NSNumber *)horizontalAccuracy {
@@ -65,7 +65,7 @@ NSString *const kElementMotionActivity =            @"gpxgd:activity";
 }
 
 - (void)setVerticalAccuracy:(NSNumber *)verticalAccuracy {
-    _verticalAccuracyString = verticalAccuracy ? [NSString stringWithFormat:@"%f", verticalAccuracy.doubleValue] : nil;
+    _verticalAccuracyString = verticalAccuracy ? [GPXType valueForDecimal:verticalAccuracy.doubleValue] : nil;
 }
 
 - (NSNumber *)verticalAccuracy {
@@ -73,7 +73,7 @@ NSString *const kElementMotionActivity =            @"gpxgd:activity";
 }
 
 - (void)setTrueHeading:(NSNumber *)trueHeading {
-    _trueHeadingString = trueHeading ? [NSString stringWithFormat:@"%f", trueHeading.doubleValue] : nil;
+    _trueHeadingString = trueHeading ? [GPXType valueForDecimal:trueHeading.doubleValue] : nil;
 }
 
 - (NSNumber *)trueHeading {
@@ -81,7 +81,7 @@ NSString *const kElementMotionActivity =            @"gpxgd:activity";
 }
 
 - (void)setMagneticHeading:(NSNumber *)magneticHeading {
-    _magneticHeadingString = magneticHeading ? [NSString stringWithFormat:@"%f", magneticHeading.doubleValue] : nil;
+    _magneticHeadingString = magneticHeading ? [GPXType valueForDecimal:magneticHeading.doubleValue] : nil;
 }
 
 - (NSNumber *)magneticHeading {
@@ -89,7 +89,7 @@ NSString *const kElementMotionActivity =            @"gpxgd:activity";
 }
 
 - (void)setHeadingAccuracy:(NSNumber *)headingAccuracy {
-    _headingAccuracyString = headingAccuracy ? [NSString stringWithFormat:@"%f", headingAccuracy.doubleValue] : nil;
+    _headingAccuracyString = headingAccuracy ? [GPXType valueForDecimal:headingAccuracy.doubleValue] : nil;
 }
 
 - (NSNumber *)headingAccuracy {
@@ -97,7 +97,7 @@ NSString *const kElementMotionActivity =            @"gpxgd:activity";
 }
 
 - (void)setFloorLevel:(NSNumber *)floorLevel {
-    _floorLevelString = floorLevel ? [NSString stringWithFormat:@"%ld", (long)floorLevel.integerValue] : nil;
+    _floorLevelString = floorLevel ? floorLevel.stringValue : nil;
 }
 
 - (NSNumber *)floorLevel {

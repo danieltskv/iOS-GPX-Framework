@@ -47,12 +47,12 @@ NSString *const kGPXTrackPointExtensionsTagName = @"gpxtpx:TrackPointExtension";
 
 - (void)setSpeed:(NSNumber *)speed
 {
-    _speedString = speed ? [NSString stringWithFormat:@"%f", [speed doubleValue]]: nil;
+    _speedString = speed ? [GPXType valueForDecimal:speed.doubleValue] : nil;
 }
 
 - (void)setCourse:(NSNumber *)course
 {
-    _courseString = course ? [NSString stringWithFormat:@"%f", [course doubleValue]]: nil;
+    _courseString = course ? [GPXType valueForDecimal:course.doubleValue]: nil;
 }
 
 - (NSNumber *)heartRate {

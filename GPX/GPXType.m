@@ -52,7 +52,7 @@
         return [NSString stringWithFormat:@"%f", degress];
     }
     
-    return @"0";
+    return @"-1";
 }
 
 + (GPXFix)fix:(NSString *)value
@@ -117,8 +117,7 @@
 
 + (NSString *)valueForDecimal:(double)decimal
 {
-    return [NSString stringWithFormat:@"%f", decimal];
-    
+    return [NSNumber numberWithDouble:decimal].stringValue;
 }
 
 + (NSDateFormatter *)newDateFormatterWithFormat:(NSString *)format {
