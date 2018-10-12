@@ -30,8 +30,6 @@ NSString *const kElementFloorLevel =                @"gpxgd:flr_lvl";
 @property (nonatomic, strong) NSString *magneticHeadingString;
 @property (nonatomic, strong) NSString *headingAccuracyString;
 
-@property (nonatomic, strong) NSString *activitygString;
-
 @property (nonatomic, strong) NSString *floorLevelString;
 
 @end
@@ -49,7 +47,7 @@ NSString *const kElementFloorLevel =                @"gpxgd:flr_lvl";
         _magneticHeadingString = [self textForSingleChildElementNamed:kElementMagneticHeading xmlElement:element];
         _headingAccuracyString = [self textForSingleChildElementNamed:kElementHeadingAccuracy xmlElement:element];
 
-        _activitygString = [self textForSingleChildElementNamed:kElementActivity xmlElement:element];
+        _activity = [self textForSingleChildElementNamed:kElementActivity xmlElement:element];
         
         _floorLevelString = [self textForSingleChildElementNamed:kElementFloorLevel xmlElement:element];
     }

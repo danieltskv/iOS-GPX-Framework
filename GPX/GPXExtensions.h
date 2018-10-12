@@ -11,6 +11,7 @@
 
 @class GPXTrailsTrackExtensions;
 @class GPXTrailsTrackPointExtensions;
+@class GPXSoundscapeExtensions;
 
 /** You can add extend GPX by adding your own elements from another schema here. 
  */
@@ -19,5 +20,6 @@
 @property (strong) GPXTrackPointExtensions *garminExtensions;
 @property (strong) GPXTrailsTrackExtensions *trailsTrackExtensions;
 @property (strong) GPXTrailsTrackPointExtensions *trailsTrackPointExtensions;
+@property (strong) GPXSoundscapeExtensions *soundscapeExtensions;
 
 @end

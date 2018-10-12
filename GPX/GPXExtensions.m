@@ -10,6 +10,7 @@
 #import "GPXElementSubclass.h"
 #import "GPXTrailsTrackExtensions.h"
 #import "GPXTrailsTrackPointExtensions.h"
+#import "GPXSoundscapeExtensions.h"
 
 @implementation GPXExtensions
 
@@ -22,6 +23,7 @@
         _garminExtensions = (GPXTrackPointExtensions *)[self childElementOfClass:[GPXTrackPointExtensions class] xmlElement:element];
         _trailsTrackExtensions = (GPXTrailsTrackExtensions *)[self childElementOfClass:[GPXTrailsTrackExtensions class] xmlElement:element];
         _trailsTrackPointExtensions = (GPXTrailsTrackPointExtensions *)[self childElementOfClass:[GPXTrailsTrackPointExtensions class] xmlElement:element];
+        _soundscapeExtensions = (GPXSoundscapeExtensions *)[self childElementOfClass:[GPXSoundscapeExtensions class] xmlElement:element];
     }
     return self;
 }
@@ -43,6 +45,21 @@
 {
     [super addChildTagToGpx:gpx indentationLevel:indentationLevel];
     
+    if (_garminExtensions) {
+        [_garminExtensions gpx:gpx indentationLevel:indentationLevel];
+    }
+    
+    if (_trailsTrackExtensions) {
+        [_trailsTrackExtensions gpx:gpx indentationLevel:indentationLevel];
+    }
+    
+    if (_trailsTrackPointExtensions) {
+        [_trailsTrackPointExtensions gpx:gpx indentationLevel:indentationLevel];
+    }
+    
+    if (_soundscapeExtensions) {
+        [_soundscapeExtensions gpx:gpx indentationLevel:indentationLevel];
+    }
 }
 
 @end
